@@ -1,0 +1,100 @@
+<script>
+    const hardcode = `S C N N I U Q Y H V C K A K M X C M I N Y H Z
+Q D K K G Y Y P D D S Z X U X T F W L Q G D W
+T I S T O P W A S T I N G Y O U R T I M E B E
+X O A N B N I G J S L H U W J S C N B N F A P
+R A J I H Z H P U R N N R M R X V O T R D K O
+S D Y E O E X J L R Y W A T P D U X C K T R I
+B C F G Z P H K K R T M H D Z B T W R P R B Y
+B X S E U I G E D R E T Z Y F X S S G E C A T
+P Q F K H P F B H G Q R F V I G B P X D R G I
+R W E X K F U X U E Y S A A B U T U P S X H X
+N C R K F M U V H H H H E E G D R V C C U A W
+X H F V T Y R X I V A A X W N S G U J W G S A
+Q K W M E O T G F I B Z W B W T U I J O H I J
+Z O L I P I P W K D L V X R M S N P A J R L R
+Y D G E M D N U O F E V A H U O Y O A J P W A
+M R I W C C P Q V M O F V B M B B I U K I P A`;
+    let is1984 = $state(false);
+    let theBackgroundClass = $state("image-background");
+    
+    function changeBackground() {
+        if(is1984) {
+            theBackgroundClass = "nineTeenEightyFourBackground";
+        } else {
+            theBackgroundClass = "image-background";
+        }
+        is1984 = !is1984;
+    }
+</script>
+
+<div class="main">
+    <div class={theBackgroundClass}>
+        <h1>THE best website you have ever seen</h1>
+    </div>
+
+    <div class="content">
+        <h2>Yes you read that right</h2>
+        <div>
+            {hardcode}
+        </div>
+        <h3>But bet you couldn't read that right</h3>
+        <button onclick={() => changeBackground()}>
+            <img id="nineteen-eighty-four" src="/pictures/1984.gif" alt="1984" height="31" width="88">
+        </button>
+    </div>
+</div>
+
+<style>
+.image-background h1, .nineTeenEightyFourBackground h1 {
+    margin-top: 200px;
+    text-align: center;
+    font-size: 2.4rem;
+    width: 100%;
+}
+
+.image-background {
+    width: 100%;
+    height: 45% !important;
+    background-image: url("/pictures/joebiden.jpg");
+    background-size: 100% 100%;
+}
+
+.nineTeenEightyFourBackground {
+    width: 100%;
+    height: 45% !important;
+    background-image: url("/pictures/burnie.gif");
+    background-size: 100% 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content h1, h3{
+    text-align: center;
+}
+
+.content {
+    height: 50%;
+
+}
+
+.content div {
+    margin-left: 3%;
+    margin-right: 3%;
+    padding: 2%;
+    background-color: #902923;
+}
+
+#nineteen-eighty-four {
+    position: absolute;
+    right: 50%;
+}
+
+#nineteen-eighty-four:hover {
+    cursor: pointer;
+}
+</style>
