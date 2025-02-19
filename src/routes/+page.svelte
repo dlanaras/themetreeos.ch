@@ -35,7 +35,7 @@ M R I W C C P Q V M O F V B M B B I U K I P A`;
 
     <div class="content">
         <h2>Yes you read that right</h2>
-        <div>
+        <div class="secret">
             {hardcode}
         </div>
         <h3>But bet you couldn't read that right</h3>
@@ -47,15 +47,13 @@ M R I W C C P Q V M O F V B M B B I U K I P A`;
 
 <style>
 .image-background h1, .nineTeenEightyFourBackground h1 {
-    margin-top: 200px;
-    text-align: center;
     font-size: 2.4rem;
     width: 100%;
 }
 
 .image-background {
     width: 100%;
-    height: 45% !important;
+    min-height: 20rem;
     background-image: url("/pictures/joebiden.jpg");
     background-size: 100% 100%;
 }
@@ -67,19 +65,22 @@ M R I W C C P Q V M O F V B M B B I U K I P A`;
     background-size: 100% 100%;
 }
 
+.secret {
+    /*make all lines same amount of letters*/
+}
+
 .main {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-.content h1, h3{
+h1, h2, h3 {
     text-align: center;
 }
 
 .content {
     height: 50%;
-
 }
 
 .content div {

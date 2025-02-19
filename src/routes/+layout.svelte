@@ -4,7 +4,7 @@
     $: innerWidth = 0;
     function isMobile(w: number) {
         return w <= 1000;
-    } 
+    }
 </script>
 <svelte:window bind:innerWidth/>
 
@@ -14,6 +14,5 @@
     {:else}
         <HeaderDesktop />
     {/if}
-    <slot />
+    <slot/>
 </div>
-

@@ -89,6 +89,12 @@
         text-decoration: none;
     }
 
+    nav a:hover {
+        background-color: #0A100D;
+        cursor: pointer;
+        border-bottom: none;
+    }
+
 	.collapsed {
 		display: none;
 	}
