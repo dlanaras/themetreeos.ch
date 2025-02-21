@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     const hardcode = `S C N N I U Q Y H V C K A K M X C M I N Y H Z
 Q D K K G Y Y P D D S Z X U X T F W L Q G D W
 T I S T O P W A S T I N G Y O U R T I M E B E
@@ -15,16 +15,31 @@ Q K W M E O T G F I B Z W B W T U I J O H I J
 Z O L I P I P W K D L V X R M S N P A J R L R
 Y D G E M D N U O F E V A H U O Y O A J P W A
 M R I W C C P Q V M O F V B M B B I U K I P A`;
+    let tokenIndices : Array<number> = $state([]);
     let is1984 = $state(false);
     let theBackgroundClass = $state("image-background");
     
     function changeBackground() {
-        if(is1984) {
+        if(!is1984) {
             theBackgroundClass = "nineTeenEightyFourBackground";
         } else {
             theBackgroundClass = "image-background";
         }
         is1984 = !is1984;
+    }
+
+    function strikeToken(index: number): void {
+        console.log(tokenIndices);
+        if(!tokenIndices.includes(index)) {
+            tokenIndices.push(index);
+        }
+    }
+
+    function unstrikeToken(index: number): void {
+        let toUnstrike = tokenIndices.findIndex(i => i === index);
+        if(toUnstrike !== -1) {
+            tokenIndices.splice(toUnstrike, 1)
+        }
     }
 </script>
 
@@ -35,12 +50,22 @@ M R I W C C P Q V M O F V B M B B I U K I P A`;
 
     <div class="content">
         <h2>Yes you read that right</h2>
-        <div class="secret">
-            {hardcode}
+        <div>
+            <div class="secret">
+                {#each hardcode as token, index}
+                    {#if token.trim() === ""}
+                        &ensp;
+                    {:else if tokenIndices.includes(index)}
+                        <button class="secret-token strikethrough" onclick={() => unstrikeToken(index)}>{token}</button>
+                    {:else}
+                        <button class="secret-token" onclick={() => strikeToken(index)}>{token}</button>
+                    {/if}
+                {/each}
+            </div>
         </div>
-        <h3>But bet you couldn't read that right</h3>
-        <button onclick={() => changeBackground()}>
-            <img id="nineteen-eighty-four" src="/pictures/1984.gif" alt="1984" height="31" width="88">
+        <h3>But bet you couldn't read that, right?</h3>
+        <button id="nineteen-eighty-four"  onclick={() => changeBackground()}>
+            <img src="/pictures/1984.gif" alt="1984" height="31" width="88">
         </button>
     </div>
 </div>
@@ -52,21 +77,41 @@ M R I W C C P Q V M O F V B M B B I U K I P A`;
 }
 
 .image-background {
-    width: 100%;
-    min-height: 20rem;
     background-image: url("/pictures/joebiden.jpg");
-    background-size: 100% 100%;
 }
 
 .nineTeenEightyFourBackground {
-    width: 100%;
-    height: 45% !important;
     background-image: url("/pictures/burnie.gif");
+}
+
+.image-background, .nineTeenEightyFourBackground {
+    width: 100%;
+    height: 20rem;
     background-size: 100% 100%;
 }
 
 .secret {
-    /*make all lines same amount of letters*/
+    /*23 letters of 1 rem + 0.5rem margin */
+    max-width: 47rem;
+    min-width: 47rem;
+    margin: 0 auto;
+}
+
+.secret-token {
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 1rem;
+    margin: 0.25rem
+}
+
+.strikethrough {
+    text-decoration-line: line-through;
+    text-decoration-thickness: 4px;
+    text-decoration-color: black;
 }
 
 .main {
@@ -80,19 +125,20 @@ h1, h2, h3 {
 }
 
 .content {
+    width: 100%;
     height: 50%;
 }
 
-.content div {
-    margin-left: 3%;
-    margin-right: 3%;
-    padding: 2%;
+.content > div {
+    margin: 0 auto;
+    padding: 1rem 0;
+    max-width: 1000px;
     background-color: #902923;
 }
 
 #nineteen-eighty-four {
-    position: absolute;
-    right: 50%;
+    all: unset;
+    width: auto 0;
 }
 
 #nineteen-eighty-four:hover {
