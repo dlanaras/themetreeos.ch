@@ -64,9 +64,11 @@ M R I W C C P Q V M O F V B M B B I U K I P A`;
             </div>
         </div>
         <h3>But bet you couldn't read that, right?</h3>
-        <button id="nineteen-eighty-four"  onclick={() => changeBackground()}>
-            <img src="/pictures/1984.gif" alt="1984" height="31" width="88">
-        </button>
+        <div id="nineteen-eighty-four">
+            <button onclick={() => changeBackground()}>
+                <img src="/pictures/1984.gif" alt="1984" height="31" width="88">
+            </button>
+        </div>
     </div>
 </div>
 
@@ -97,13 +99,16 @@ M R I W C C P Q V M O F V B M B B I U K I P A`;
     margin: 0 auto;
 }
 
-.secret-token {
+.secret-token, #nineteen-eighty-four button{
     background: none;
     border: none;
     color: inherit;
     padding: 0;
     cursor: pointer;
     outline: inherit;
+}
+
+.secret-token {
     font-size: 1rem;
     margin: 0.25rem
 }
@@ -129,7 +134,7 @@ h1, h2, h3 {
     height: 50%;
 }
 
-.content > div {
+.content > div:not(#nineteen-eighty-four) {
     margin: 0 auto;
     padding: 1rem 0;
     max-width: 1000px;
@@ -137,11 +142,12 @@ h1, h2, h3 {
 }
 
 #nineteen-eighty-four {
-    all: unset;
-    width: auto 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-#nineteen-eighty-four:hover {
+#nineteen-eighty-four button:hover {
     cursor: pointer;
 }
 </style>
