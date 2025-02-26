@@ -4,8 +4,10 @@
     function increment() {
         if(clicks === 0) {
             ssss = true;
+            clicks++;
+        } else if (clicks < 6) {
+            clicks++;
         }
-        clicks++;
     }
 </script>
 
@@ -18,7 +20,7 @@
 </button>
 {#if ssss}
     <hr>
-    <h1><a href="https://github.com/dlanaras/scuffed-man/releases/tag/v1.0.1" target="_blank">SSSSSSSSSSSSSSSSSSSSSSSSSSsscuffed</a></h1>
+    <h1><a href="https://github.com/dlanaras/scuffed-man/releases/tag/v1.0.1" target="_blank">SSSSSSSSSSSSSSsscuffed</a></h1>
 {/if}
 
 <style>
@@ -39,6 +41,5 @@
     .tail {
         position: relative;
         margin: 0;
-        
     }
 </style>

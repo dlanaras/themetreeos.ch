@@ -19,7 +19,7 @@
         <a href="/snek">Snek</a>
         <a href="/ai">AI</a>
         <a href="https://github.com/dlanaras" target="_blank">Gäthöb</a>
-        <a href="/about">About</a>
+        <a href="/aboutme">About Me</a>
     </nav>
 </div>
 

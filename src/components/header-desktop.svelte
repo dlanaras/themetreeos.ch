@@ -3,20 +3,19 @@
     <a href="/snek">Snek</a>
     <a href="/ai">AI</a>
     <a href="https://github.com/dlanaras" target="_blank">Gäthöb</a>
-    <a href="/about">About</a>
+    <a href="/aboutme">About</a>
 </nav>
 
 <style>
     nav {
-        position: fixed;
+        position: relative;
         top: 0;
         left: 0;
         width: 100%;
-        height: 6%;
+        height: fit-content;
         display: flex;
         justify-content: space-evenly;
         align-items: stretch;
-        margin-bottom: 6%;
         z-index: 100;
     }
 
