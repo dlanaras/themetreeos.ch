@@ -104,7 +104,6 @@ M R I W C C P Q V M O F V B M B B I U K I P A`;
     border: none;
     color: inherit;
     padding: 0;
-    cursor: pointer;
     outline: inherit;
 }
 
@@ -147,7 +146,7 @@ h1, h2, h3 {
     justify-content: center;
 }
 
-#nineteen-eighty-four button:hover {
+#nineteen-eighty-four button img:hover {
     cursor: pointer;
 }
 </style>
