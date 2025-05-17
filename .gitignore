@@ -1,5 +1,6 @@
 # Dependency directories
 node_modules/
+.svelte-kit
 
 # IDE related
 .idea
