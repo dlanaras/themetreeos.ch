@@ -17,7 +17,7 @@
     <h1><marquee direction="right">About Me</marquee></h1>
     <div class="content">
         <h2>Name:</h2>
-        <p>themetreeos.xyz</p>
+        <p>themetreeos.<s>xyz</s> ch</p>
         <h2>Nicknames:</h2>
         <p>www.themetreeos.xyz && lananas.themetreeos.xyz</p>
         <h2>Height</h2>
