@@ -17,9 +17,9 @@
     <h1><marquee direction="right">About Me</marquee></h1>
     <div class="content">
         <h2>Name:</h2>
-        <p>themetreeos.<s>xyz</s> ch</p>
+        <p><s>themetreeos.xyz</s> <span class="tiny">WE DONT TALK ABOUT THAT</span> themetreeos.ch</p>
         <h2>Nicknames:</h2>
-        <p>www.themetreeos.xyz && lananas.themetreeos.xyz</p>
+        <p>www.themetreeos.ch && lananas.themetreeos.ch</p>
         <h2>Height</h2>
         <p>{innerHeight} Pixels</p>
         <h2>Width</h2>
@@ -77,6 +77,10 @@ button:hover {
     to {
         transform: rotate(180deg);
     }
+}
+ 
+.tiny {
+    font-size: 4px;
 }
 
 .wrapper h1 {
