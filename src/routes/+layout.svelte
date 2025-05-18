@@ -31,7 +31,7 @@
 <style>
     .cursor {
         position: absolute;
-        background-image: url("pictures/newcursor.png");
+        background-image: url("/pictures/newcursor.png");
         background-size: cover;
         width: 150px;
         height: 200px;
